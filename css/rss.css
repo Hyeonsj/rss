@@ -1,0 +1,7 @@
+
+
+
+.article{}
+.article .section{margin-bottom: 20px;}
+.article .section .clip{overflow: hidden;}
+.article .section .clip img{max-width: 100%;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #707070;display:inline-block;}
