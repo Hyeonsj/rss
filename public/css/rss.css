@@ -1,0 +1,36 @@
+
+
+/* 블로그 형 리스트 */
+.article .blog-group-group{}
+.article .section.blog-group{width:1170px;  margin-right: auto;margin-left: auto;}
+.article .blog-group .post-title-group h3{display: inline-block;}
+.article .blog-group .post-title-group .post-title-unread{padding-left:20px;color:#ddd}
+.article .blog-group .item{margin-bottom: 20px;}
+.article .blog-group .item .clip{overflow: hidden; }
+.article .blog-group .item .clip img{max-height:100%;max-width: 100%;width:100%;height:100px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #ddd;display:inline-block;}
+.article .blog-group .item .blog-body{}
+
+
+.article .gally{}
+.article .section.gally{width:1170px;  margin-right: auto;margin-left: auto;}
+.article .gally .post-title-group{}
+.article .gally .post-title-group h3{display: inline-block;}
+.article .gally .post-title-group .post-title-unread{padding-left:20px;color:#ddd}
+.article .gally .item{margin-bottom: 20px;}
+.article .gally .item .clip{}
+.article .gally .item h4.title{margin-bottom: 5px;}
+.article .gally .item .clip img{width:100%;height:160px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #ddd;}
+.article .gally .item .meta{}
+.article .gally .item .meta .label-default{display: block;}
+.article .gally .item .meta .time{color:#8e8e8e;}
+
+
+
+.article .list-group{}
+.article .section.list-group{width:1170px;  margin-right: auto;margin-left: auto;}
+.article .list-group .item{margin-bottom: 20px;}
+.article .list-group .post-title-group{}
+.article .list-group .post-title-group h3{display: inline-block;}
+.article .list-group .post-title-group .post-title-unread{padding-left:20px;color:#8e8e8e}
+.article .list-group .list-body{color:#8e8e8e;}
+.article .list-group .list-body h4{color:#000;}

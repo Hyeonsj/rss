@@ -11,14 +11,14 @@
     <title>Simple Rss</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font-awesome CSS -->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="public/css/font-awesome.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="css/rss.css" rel="stylesheet">
+    <link href="public/css/simple-sidebar.css" rel="stylesheet">
+    <link href="public/css/rss.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -63,63 +63,372 @@
         </div>
         <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div class="article " id="page-content-wrapper">
+
+        <div class="article" id="page-content-wrapper" >
             <div class="container-fluid">
                 <div class="header clearfix">
                     <div class="pull-left">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i></a>
                     </div>
                     <div class="pull-right">
-                        <a href="#" class="btn btn-default" id=""><i class="fa fa-check"></i></a>
-                        <a href="#" class="btn btn-default" id=""><i class="fa fa-repeat"></i></a>
+                        <a href="#" class="btn btn-default"><i class="fa fa-check"></i></a>
+                        <a href="#" class="btn btn-default"><i class="fa fa-repeat"></i></a>
                     </div>
                 </div>
-                <div class="row">
+                <!-- 블로그 테마-->
+                <div class="section row blog-group">
                     <div class="col-lg-12">
-                        <h2>Simple Sidebar</h2>
-                        <div class="clearfix section">
-                            <div class="col-xs-2 clip">
-                                <img src="img/sample1.jpg">
-                            </div>
-                            <div class="col-xs-10">
-                                <h3>Dramatically Raise the Value of Any Piece of Content</h3>
-                                <div class="meta">
-                                    <h4><span class="label label-default">searchenginewatch.com</span></h4>
-                                    <h4>
-                                        <small class="text-muted">1 hour ago • <a href="#" class="text-muted">Read More</a></small>
-                                    </h4>
+                        <div class="post-title-group">
+                            <h3>Simple Sidebar</h3>
+                            <span class="post-title-unread">15 unread articles</span>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample1.jpg">
+                                    </div>
                                 </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample2.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/thumb.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample4.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample5.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample6.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample7.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample8.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-2 blog-left">
+                                    <div class="clip">
+                                        <img src="public/img/sample9.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 blog-body">
+                                    <h4>Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <p>111111</p>
+                                    <div class="meta">
+                                        <span class="label label-default">searchenginewatch.com</span>
+                                        
+                                        <span class="time">1 hour ago</span>
+
+                                    </div>
+                                </div>
+                            </a>
+                            <span class="pull-left"><button>hide</button> / <button>save</button></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 갤러리 테마 -->
+                <div class="section row gally">
+
+                    <div class="col-lg-12">
+                        <div class="post-title-group">
+                            <h3>Simple Sidebar</h3>
+                            <span class="post-title-unread">15 unread articles</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample1.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample2.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/thumb.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample4.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample5.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample6.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample7.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample8.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample9.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-3 item">
+                                <a href="#">
+                                    <div class="clip">
+                                        <img src="public/img/sample2.jpg">
+                                    </div>
+                                    <h4 class="title">Dramatically Raise the Value of Any Piece of Content</h4>
+                                    <div class="meta">
+
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="clearfix section">
-                            <div class="col-xs-2 clip">
-                                <img src="img/sample2.jpg">
-                            </div>
-                            <div class="col-xs-10">
-                                <h3>14 Useful Sites for Designers</h3>
-                                <div class="meta">
-                                    <h4><span class="label label-default">searchenginewatch.com</span></h4>
-                                    <h4>
-                                        <small class="text-muted">1 hour ago • <a href="#" class="text-muted">Read More</a></small>
-                                    </h4>
+                    </div>
+                </div>
+
+                <div class="section row list-group">
+                    <div class="col-lg-12">
+                        <div class="post-title-group">
+                            <h3>Simple Sidebar</h3>
+                            <span class="post-title-unread">15 unread articles</span>
+                        </div>
+                        <div class="clearfix item row">
+                            <a href="#">
+                                <div class="col-xs-12 list-body">
+                                    <h4>토요일 오전</h4>
+                                    <p>20분 남짓 짧은 시간. 봉하마을에 다녀왔다. 생각 같아선 한 두 시간 있고 싶었지만, 함께한 이들과 일정을 맞추느라 어쩔 수 없이 잠시 눈도장만 찍고 발걸음을 돌려야 했다. 사진으로 본 것보다 소박하게 조성된 故 노무현 前 대통령의 묘소. 그 앞에서 묵념을 하고 한참 묘소만 바라보았다. 스피커에서 흘러나오는 상록수와 아침이슬 연주곡, 그리고 여기저기 남겨진 고인의 흔적들. 그 흔적들을 따라가는데 울컥하고 눈물이 쏟아지..</p>
+                                    <div class="meta">
+                                        <span class="author">by searchenginewatch.com</span>
+                                        <span class="">/</span>
+                                        <span class="time">1 hour ago</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="clearfix item row">
+                            <a hrer="#">
+                                <div class="col-xs-12 list-body">
+                                    <h4>부끄러움</h4>
+                                    <p>20분 남짓 짧은 시간. 봉하마을에 다녀왔다. 생각 같아선 한 두 시간 있고 싶었지만, 함께한 이들과 일정을 맞추느라 어쩔 수 없이 잠시 눈도장만 찍고 발걸음을 돌려야 했다. 사진으로 본 것보다 소박하게 조성된 故 노무현 前 대통령의 묘소. 그 앞에서 묵념을 하고 한참 묘소만 바라보았다. 스피커에서 흘러나오는 상록수와 아침이슬 연주곡, 그리고 여기저기 남겨진 고인의 흔적들. 그 흔적들을 따라가는데 울컥하고 눈물이 쏟아지..</p>
+                                    <div class="meta">
+                                        <span class="author">by searchenginewatch.com</span>
+                                        <span class="">/</span>
+                                        <span class="time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- /#page-content-wrapper -->
     </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="js/rss.js"></script>
+    <script src="public/js/jquery.js"></script>
+    <script src="public/js/rss.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
 
 
 </body>
