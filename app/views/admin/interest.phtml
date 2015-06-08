@@ -1,0 +1,110 @@
+<?php
+?>
+<ul class="breadcrumb breadcrumb-page">
+    <div class="breadcrumb-label text-light-gray">You are here: </div>
+    <li><a href="/admin">Home</a></li>
+    <li class="active"><a href="/admin/interest">Category</a></li>
+</ul>
+<div class="page-header">
+
+    <div class="row">
+        <!-- Page header, center on small screens -->
+        <h1 class="col-xs-12 col-sm-4 text-center text-left-sm"><i class="fa fa-bars page-header-icon"></i>&nbsp;&nbsp;Category</h1>
+    </div>
+</div> <!-- / .page-header -->
+<div class="panel" id="interest">
+    <div class="panel-heading">
+        <span class="panel-title">List</span>
+    </div>
+
+    <div class="panel-body">
+        <div class="table-primary table-responsive">
+            <table class="table table-striped table-bordered" id="interest-table">
+                <thead>
+                <tr>
+                    <th style="width: 11%;">No</th>
+                    <th>Category</th>
+                    <th style="width: 15%;"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php $page_count = count($page->items); ?>
+                <?php foreach($page->items as $key=>$val) : /** @var $val User */?>
+                    <tr>
+                        <td><?php echo $page->total_items - $key - (($page->current-1) * $limit); ?></td>
+                        <td><?php echo $val->interest ?></td>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#modal-interest-form" class="btn btn-primary btn-xs btn-approve interest-edit" data-interest-id="<?php echo $val->interest_id; ?>">Change</button>
+                            <button type="button" class="btn btn-danger btn-xs btn-delete" data-interest-id="<?php echo $val->interest_id; ?>">Delete</button>
+
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-left">
+            <ul class="pagination pagination-sm">
+                <?php
+                $current = $page->current;
+                $start = (ceil($current/10)-1)*10+1;
+                $end = $start+9;
+                if($end>$page->total_pages) {
+                    $end = $page->total_pages;
+                }
+                ?>
+                <?php
+                $queryString = $_SERVER['QUERY_STRING'];
+                $queryStringArr = explode("&", $queryString);
+                $newQueryString = array();
+                foreach($queryStringArr as $val) {
+                    $valArr = explode("=", $val);
+                    if(count($valArr)==2) {
+                        if($valArr[0]!='page' and $valArr[0]!='_url') {
+                            $newQueryString[] = $val;
+                        }
+                    }
+                }
+                $queryString = implode("&", $newQueryString);
+
+                ?>
+                <li><a href="?page=1&<?php echo $queryString; ?>">&laquo;</a></li>
+                <li><a href="?page=<?php echo $page->before; ?>&<?php echo $queryString; ?>">&lsaquo;</a></li>
+                <?php for($i=$start;$i<=$end;$i++) : ?>
+                    <li <?php if($i==$current) : ?>class="active"<?php endif ?>><a href="?page=<?php echo $i; ?>&<?php echo $queryString; ?>"><?php echo $i; ?></a></li>
+                <?php endfor ?>
+                <li><a href="?page=<?php echo $page->next; ?>&<?php echo $queryString; ?>">&rsaquo;</a></li>
+                <li><a href="?page=<?php echo $page->last; ?>&<?php echo $queryString; ?>">&raquo;</a></li>
+            </ul>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-interest-form">New Category</button>
+        </div>
+    </div>
+</div>
+
+<form class="modal fade" id="modal-interest-form" aria-hidden="true" action="/admin/interest" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="interest_id" value="0" />
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Category form</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <label for="interest" class="control-label">Category</label>
+                        <input type="text" name="interest_title" id="interest" value="" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</form><!-- /.modal -->
