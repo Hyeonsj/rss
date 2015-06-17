@@ -15,7 +15,7 @@ if(!isset($notifications)) {
 
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -28,6 +28,7 @@ if(!isset($notifications)) {
 
     <!-- font-awesome CSS -->
     <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/tree-style.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -45,34 +46,29 @@ if(!isset($notifications)) {
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="section sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
+            <div id="jstree-proton-2" class="proton-demo">
+                <ul>
+                    <li data-jstree='{ "opened" : true }'>Root node (wholerow mode)
+                        <ul >
+                            <li>
+                                <a href="#">
+                                    <em>initially</em>
+                                    <strong>selected</strong>
+                                </a>
+                            </li>
+                            <li data-jstree='{ "icon" : "./assets/images/tree_icon.png" }'>custom icon URL</li>
+                            <li data-jstree='{ "opened" : true }'>initially open
+                                <ul>
+                                    <li>Another node</li>
+                                </ul>
+                            </li>
+                            <li data-jstree='{ "icon" : "glyphicon glyphicon-leaf" }'>Custom icon class (bootstrap)</li>
+                        </ul>
+                    </li>
+                    <li><a href="http://www.jstree.com">Root node 2</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -85,7 +81,9 @@ if(!isset($notifications)) {
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/jquery.form.min.js"></script>
     <script src="js/rss.js"></script>
+    <script src="js/jstree.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

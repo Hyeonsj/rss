@@ -14,39 +14,47 @@ jQuery(function($){
 });
 
 jQuery(document).ready(function($){
-
-    var youtube_id =  "hpwLXEmuAco";
-
-    $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/videos",
-        data : "part=contentDetails&id="+youtube_id+"&key=AIzaSyBpvYuLgghcrczsYfkpjhnKvFLXV4_lLxE",
-        success: function (data) {
-            console.log(convert_time(data.items[0].contentDetails.duration));
-        },
-        error: function (data) {
-            console.log(data);
+    $('#jstree-proton-2').jstree({
+        'plugins': ["wholerow"],
+        'core': {
+            'themes': {
+                'name': 'proton',
+                'responsive': true
+            }
         }
     });
 
-    function convert_time(duration) {
-        var a = duration.match(/\d+/g);
+    $("#upload-rss").change(function(){
+        var $formFile = $(this);
+        var $form = $formFile.parents("form");
+        console.log($form);
+        $form.ajaxSubmit({
+            url:"/rss/upload",
+            dataType:'json',
+            type:'post',
+            iframe:true,
+            target:'#hidden-iframe',
+            success:function(json) {
+                if(json.status == "success") {
+                    //alert("!");
+                }
+                else if(json.status == "failure") {
+                    alert(json.message);
+                }
+            },
+            error:function(data) {
+                alert("error");
+            },
+            complete:function () {
+                if ($.browser.msie) {
+                    $formFile.replaceWith($formFile.clone());
+                }
+                else {
+                    $formFile.val('');
+                }
+            }
+        });
+        return false;
+    });
 
-        duration = "";
-
-        if (a.length == 3) {
-            duration = a[0]+":";
-            duration = duration + a[1]+":";
-            duration = duration + a[2];
-        }
-
-        if (a.length == 2) {
-            duration = duration + a[0]+":";
-            duration = duration + a[1];
-        }
-
-        if (a.length == 1) {
-            duration = duration + a[0];
-        }
-        return duration
-    }
 });
