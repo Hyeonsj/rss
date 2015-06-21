@@ -26,13 +26,18 @@ if(!isset($notifications)) {
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
     <!-- font-awesome CSS -->
     <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/tree-style.css" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/rss.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/metisMenu.css">
+
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -44,34 +49,6 @@ if(!isset($notifications)) {
 <body>
 
     <div id="wrapper">
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <div id="jstree-proton-2" class="proton-demo">
-                <ul>
-                    <li data-jstree='{ "opened" : true }'>Root node (wholerow mode)
-                        <ul >
-                            <li>
-                                <a href="#">
-                                    <em>initially</em>
-                                    <strong>selected</strong>
-                                </a>
-                            </li>
-                            <li data-jstree='{ "icon" : "./assets/images/tree_icon.png" }'>custom icon URL</li>
-                            <li data-jstree='{ "opened" : true }'>initially open
-                                <ul>
-                                    <li>Another node</li>
-                                </ul>
-                            </li>
-                            <li data-jstree='{ "icon" : "glyphicon glyphicon-leaf" }'>Custom icon class (bootstrap)</li>
-                        </ul>
-                    </li>
-                    <li><a href="http://www.jstree.com">Root node 2</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
 
         <?php echo $this->getContent(); ?>
 
@@ -82,8 +59,9 @@ if(!isset($notifications)) {
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src="js/jquery.form.min.js"></script>
+    <script src="js/metisMenu.js"></script>
     <script src="js/rss.js"></script>
-    <script src="js/jstree.min.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

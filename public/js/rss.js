@@ -14,20 +14,38 @@ jQuery(function($){
 });
 
 jQuery(document).ready(function($){
-    $('#jstree-proton-2').jstree({
-        'plugins': ["wholerow"],
-        'core': {
-            'themes': {
-                'name': 'proton',
-                'responsive': true
+
+    $('#menu').metisMenu({
+        toggle: false
+    });
+
+
+    $("#menu ul.collapse a").on("click", function(){
+        var $rss_url = $(this).attr("data-rss-url");
+
+        $.ajax({
+            url:"/rss/getRssContent/",
+            data: "rss_url="+$rss_url,
+            type:"post",
+            dataType:'json',
+            success:function(json){
+
+                if(json.status=='success') {
+                    $("#rss_content").html(json.data);
+                }
+                else {
+                    alert(json.message);
+                }
+            },
+            error:function(data){
+                alert("error");
             }
-        }
+        });
     });
 
     $("#upload-rss").change(function(){
         var $formFile = $(this);
         var $form = $formFile.parents("form");
-        console.log($form);
         $form.ajaxSubmit({
             url:"/rss/upload",
             dataType:'json',

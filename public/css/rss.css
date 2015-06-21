@@ -33,9 +33,13 @@
 
 .article .list-group{}
 .article .section.list-group{width:1170px;  margin-right: auto;margin-left: auto;}
+.article .list-group a{color:#8e8e8e !important; }
 .article .list-group .item{margin-bottom: 20px;}
 .article .list-group .post-title-group{}
 .article .list-group .post-title-group h3{display: inline-block;}
 .article .list-group .post-title-group .post-title-unread{padding-left:20px;color:#8e8e8e}
-.article .list-group .list-body{color:#8e8e8e;}
+.article .list-group .list-body{color:#8e8e8e !important; }
 .article .list-group .list-body h4{color:#000;}
+
+
+.entry-ccl{display:none;}

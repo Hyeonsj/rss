@@ -4,6 +4,7 @@ use Phalcon\Mvc\View;
 use Phalcon\Paginator\Adapter\Model as Paginator;
 
 require_once __DIR__."../../libs/rsslib/rsslib.php";
+require_once __DIR__."../../libs/curlclass/Curl.php";
 
 class RssController extends ControllerBase {
 
@@ -16,7 +17,7 @@ class RssController extends ControllerBase {
     public function indexAction()
     {
 
-        $return_rss =  RSS_Display("http://uiandwe.tistory.com/feed", 5);
+        $return_rss =  RSS_Display("http://uiandwe.tistory.com/feed", 5, true, true);
 
         $this->view->setVar("result", $return_rss);
         return true;
@@ -26,6 +27,15 @@ class RssController extends ControllerBase {
 //        }
 //
 //        exit();
+    }
+
+    public function getRssContentAction(){
+
+        $rss_url = $this->request->getPost("rss_url");
+
+
+        $return_rss =  RSS_Display($rss_url, 5, true, true);
+        return $this->setJsonContent("success", "", $return_rss);
     }
 
     public function uploadAction()

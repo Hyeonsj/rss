@@ -139,67 +139,67 @@ function RSS_Links($url, $size = 15)
 }
 
 
-
 function RSS_Display($url, $size = 15, $site = 0, $withdate = 0)
 {
-	global $RSS_Content;
+    global $RSS_Content;
 
-	$opened = false;
-	$page = "";
-	$site = (intval($site) == 0) ? 1 : 0;
+    $opened = false;
+    $page = "";
+    $site = (intval($site) == 0) ? 1 : 0;
 
-	RSS_Retrieve($url);
-	if($size > 0)
-		$recents = array_slice($RSS_Content, $site, $size + 1 - $site);
+    RSS_Retrieve($url);
+    if($size > 0)
+        $recents = array_slice($RSS_Content, $site, $size + 1 - $site);
 
-	foreach($recents as $article)
-	{
-		$type = $article["type"];
-		if($type == 0)
-		{
-			if($opened == true)
-			{
-				$page .="</ul>\n";
-				$opened = false;
-			}
-			$page .="<b>";
-		}
-		else
-		{
-			if($opened == false) 
-			{
-				$page .= "<ul>\n";
-				$opened = true;
-			}
-		}
-		$title = $article["title"];
-		$link = $article["link"];
-		$page .= "<li><a href=\"$link\">$title</a>";
-		if($withdate)
-		{
-      $date = $article["date"];
-      $page .=' <span class="rssdate">'.$date.'</span>';
+    foreach($recents as $article)
+    {
+        $type = $article["type"];
+        if($type == 0)
+        {
+            if($opened == true)
+            {
+                $page .="\n";
+                $opened = false;
+            }
+            $page .="<div class='header-group'>";
+        }
+        else
+        {
+            if($opened == false)
+            {
+                $page .= "\n";
+                $opened = true;
+            }
+        }
+        $title = $article["title"];
+        $link = $article["link"];
+        $page .= "<div class='clearfix item row'><a href=\"$link\"><div class='col-xs-12 list-body'><h4>$title</h4>";
+
+        $description = $article["description"];
+        if($description != false)
+        {
+            $page .= "<p class='rssdesc'>$description</p>";
+        }
+        if($withdate)
+        {
+            $date = $article["date"];
+            $page .="<div class='meta'><span class=''>/</span><span class='time'>".$date."</span></div>";
+        }
+        $page .= "</div></a></div>\n";
+
+        if($type==0)
+        {
+            $page .="</div>";
+        }
+
     }
-		$description = $article["description"];
-		if($description != false)
-		{
-			$page .= "<br><span class='rssdesc'>$description</span>";
-		}
-		$page .= "</li>\n";			
-		
-		if($type==0)
-		{
-			$page .="</b><br />";
-		}
 
-	}
+    if($opened == true)
+    {
+        $page .="\n";
+    }
+    return $page."\n";
 
-	if($opened == true)
-	{	
-		$page .="</ul>\n";
-	}
-	return $page."\n";
-	
 }
 
 

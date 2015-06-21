@@ -1,10 +1,60 @@
 
 
+
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul id="menu">
+        <li class="active">
+            <a href="#">All <span class="fa arrow"></span></a>
+            <ul class="collapse in">
+                <li><a href="#" data-rss-url="http://uiandwe.tistory.com/rss">uiandwe</a></li>
+                <li><a href="#">item 0.2</a></li>
+                <li><a href="http://onokumus.com">onokumus</a></li>
+                <li><a href="#">item 0.4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Menu 1 <span class="glyphicon arrow"></span></a>
+            <ul class="collapse">
+                <li><a href="#">item 1.1</a></li>
+                <li><a href="#">item 1.2</a></li>
+                <li>
+                    <a href="#">Menu 1.3 <span class="fa plus-times"></span></a>
+                    <ul class="collapse">
+                        <li><a href="#">item 1.3.1</a></li>
+                        <li><a href="#">item 1.3.2</a></li>
+                        <li><a href="#">item 1.3.3</a></li>
+                        <li><a href="#">item 1.3.4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">item 1.4</a></li>
+                <li>
+                    <a href="#">Menu 1.5 <span class="fa plus-minus"></span></a>
+                    <ul class="collapse">
+                        <li><a href="#">item 1.5.1</a></li>
+                        <li><a href="#">item 1.5.2</a></li>
+                        <li><a href="#">item 1.5.3</a></li>
+                        <li><a href="#">item 1.5.4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Menu 2 <span class="glyphicon arrow"></span></a>
+            <ul class="collapse">
+                <li><a href="#">item 2.1</a></li>
+                <li><a href="#">item 2.2</a></li>
+                <li><a href="#">item 2.3</a></li>
+                <li><a href="#">item 2.4</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!-- /#sidebar-wrapper -->
+
 <?php
 
 ?>
-
-<?php echo $result; ?>
 
 <form action="post" enctype="multipart/form-data">
     <input type="file" name="temp_file" id="upload-rss"/>
@@ -21,8 +71,12 @@
                 <a href="#" class="btn btn-default"><i class="fa fa-repeat"></i></a>
             </div>
         </div>
+
+        <div class="section row list-group" id="rss_content">
+
+        </div>
         <!-- 블로그 테마-->
-        <div class="section row blog-group">
+        <div class="section row blog-group" style="display: none">
             <div class="post-title-group">
                 <h3>Simple Sidebar</h3>
                 <span class="post-title-unread">15 unread articles</span>
@@ -200,7 +254,7 @@
 
 
         <!-- 갤러리 테마 -->
-        <div class="section row gally">
+        <div class="section row gally"  style="display: none">
             <div class="post-title-group">
                 <h3>Simple Sidebar</h3>
                 <span class="post-title-unread">15 unread articles</span>
@@ -361,8 +415,9 @@
                     </div>
                 </a>
             </div>
-
         </div>
+
+
     </div>
 </div>
 
