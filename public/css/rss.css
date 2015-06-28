@@ -4,27 +4,55 @@
 /*.article .header {padding: 0 30px  0 15px;}*/
 .article .header {}
 .article .header .btn-menu-wrapper{}
+.article .header .btn-menu-wrapper .btn-group{}
+.article .header .btn-menu-wrapper .btn-group button.caret{margin-left: 5px;}
+.article .header .btn-menu-wrapper .btn-group ul.dropdown-menu{  min-width: 95px;}
+
+/*메뉴*/
+#wrapper #sidebar-wrapper{}
+#wrapper #sidebar-wrapper a{color: #707070;}
+#sidebar-wrapper .btn-add-wrapper{padding:10px 15px;}
+#sidebar-wrapper ul#menu{list-style: none;width:250px;  padding: 10px 15px;}
+#sidebar-wrapper ul#menu li{list-style: none;}
+#sidebar-wrapper ul#menu li ul{padding-left: 35px;}
+#sidebar-wrapper .user-info{position: absolute;  padding: 10px 20px;bottom: 0px;width: 100%;background: #EFEFEF;border-top: 1px solid #AAA;}
+#sidebar-wrapper .user-info img{ float: left;margin-top: 10px;width: 40px;height: 40px;border-radius: 50%;}
+#sidebar-wrapper .user-info p.email{  margin: 0;padding: 5px 0 5px 50px;}
+#sidebar-wrapper .user-info a.logout{display: block;margin: 0;padding: 0 0 0 50px;color:#707070;}
+
 
 /* 블로그 형 리스트 */
-.article .blog-group-group{}
-.article .section.blog-group{width:1170px;  margin-right: auto;margin-left: auto;}
-.article .blog-group .post-title-group h3{display: inline-block;}
+.article .blog-group{color:#000;}
+.article .blog-group a{color:#000;}
+.article .section.blog-group{margin-right: auto;margin-left: auto;}
+.article .blog-group  .header-group .list-left{display: none;}
+.article .blog-group  .header-group .list-body{}
+.article .blog-group  .header-group .list-body .meta{display: none;}
+.article .blog-group .post-title-group h3{color: #000;display: inline-block;}
 .article .blog-group .post-title-group .post-title-unread{padding-left:20px;color:#ddd}
 .article .blog-group .item{margin-bottom: 20px;}
 .article .blog-group .item .clip{overflow: hidden; }
 .article .blog-group .item .clip img{max-height:100%;max-width: 100%;width:100%;height:100px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #ddd;display:inline-block;}
-.article .blog-group .item .blog-body{}
-
+.article .blog-group .item .list-body{}
+.article .blog-group .item .list-body p{word-break: break-all;}
+.article .blog-group .item .list-body p.rssdesc{color:#8e8e8e;}
+.article .blog-group .item .list-body .meta{color:#8e8e8e;}
 
 .article .gally{}
-.article .section.gally{width:1170px;  margin-right: auto;margin-left: auto;}
+.article .section.gally{margin-right: auto;margin-left: auto;}
+.article .gally .header-group{margin: 20px 0;}
+.article .gally .header-group .item{height:auto;width: 100%;}
+.article .gally .header-group .item .clip{display: none;}
+.article .gally .header-group .item h4{color: #000; font-size: 20px;display: inline-block;margin-right: 20px;}
+.article .gally .header-group .item .meta{display: inline;}
 .article .gally .post-title-group{}
 .article .gally .post-title-group h3{display: inline-block;}
 .article .gally .post-title-group .post-title-unread{padding-left:20px;color:#ddd}
-.article .gally .item{margin-bottom: 20px;}
+.article .gally .item{height: 225px;margin: 0;}
 .article .gally .item .clip{}
+.article .gally .item h4{color:#000;font-size:15px;word-break: break-all;}
 .article .gally .item h4.title{margin-bottom: 5px;}
-.article .gally .item .clip img{width:100%;height:160px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #ddd;}
+.article .gally .item .clip .rss_img{width:100%;height:160px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border:1px solid #ddd;}
 .article .gally .item .meta{}
 .article .gally .item .meta .label-default{display: block;}
 .article .gally .item .meta .time{color:#8e8e8e;}
@@ -32,8 +60,12 @@
 
 
 .article .list-group{}
-.article .section.list-group{width:1170px;  margin-right: auto;margin-left: auto;}
+.article .section.list-group{   padding: 5px 10px;margin: 10px auto;}
 .article .list-group a{color:#8e8e8e !important; }
+.article .list-group .header-group{}
+.article .list-group .header-group .list-body{}
+.article .list-group .header-group .list-body h4{font-size: 24px;}
+.article .list-group .header-group .list-body .meta{display: none;}
 .article .list-group .item{margin-bottom: 20px;}
 .article .list-group .post-title-group{}
 .article .list-group .post-title-group h3{display: inline-block;}

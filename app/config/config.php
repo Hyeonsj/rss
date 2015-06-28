@@ -1,9 +1,13 @@
 <?php
 
+require_once __DIR__.'/../classes/Context.php';
+
+ini_set('memory_limit','-1');
+
 return new \Phalcon\Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
-        'host'        => 'localhost',
+        'host'        => '127.0.0.1',
         'username'    => 'root',
         'password'    => 'cimple1234',
         'dbname'      => 'rss',

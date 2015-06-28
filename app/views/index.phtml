@@ -24,19 +24,20 @@ if(!isset($notifications)) {
     <title>Simple Rss</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
     <!-- font-awesome CSS -->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/font-awesome.css" rel="stylesheet">
 
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="css/rss.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/metisMenu.css">
+    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+    <link href="../../css/rss.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/metisMenu.css">
+    <?php $this->assets->outputCss(); ?>
 
 
     <!--[if lt IE 9]>
@@ -52,19 +53,19 @@ if(!isset($notifications)) {
 
         <?php echo $this->getContent(); ?>
 
-    <!-- /#page-content-wrapper -->
+
     </div>
-    <!-- /#wrapper -->
+
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.form.min.js"></script>
-    <script src="js/metisMenu.js"></script>
-    <script src="js/rss.js"></script>
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/jquery.form.min.js"></script>
+    <script src="../../js/metisMenu.js"></script>
+    <script src="../../js/rss.js"></script>
 
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+    <script src="../../js/bootstrap.min.js"></script>
+    <?php $this->assets->outputJs(); ?>
 </body>
 </html>

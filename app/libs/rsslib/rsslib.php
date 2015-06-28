@@ -173,7 +173,7 @@ function RSS_Display($url, $size = 15, $site = 0, $withdate = 0)
         }
         $title = $article["title"];
         $link = $article["link"];
-        $page .= "<div class='clearfix item row'><a href=\"$link\"><div class='col-xs-12 list-body'><h4>$title</h4>";
+        $page .= "<div class='clearfix item row'><a href=\"$link\"  target='_blank'><div class='col-xs-12 list-body'><h4>$title</h4>";
 
         $description = $article["description"];
         if($description != false)
@@ -183,7 +183,8 @@ function RSS_Display($url, $size = 15, $site = 0, $withdate = 0)
         if($withdate)
         {
             $date = $article["date"];
-            $page .="<div class='meta'><span class=''>/</span><span class='time'>".$date."</span></div>";
+            $date = new DateTime($date);
+            $page .="<div class='meta'><span class=''></span><span class='time'>".$date->format('Y-m-d H:i')."</span></div>";
         }
         $page .= "</div></a></div>\n";
 
@@ -201,6 +202,181 @@ function RSS_Display($url, $size = 15, $site = 0, $withdate = 0)
     return $page."\n";
 
 }
+
+
+function RSS_blog_Display($url, $size = 15, $site = 0, $withdate = 0)
+{
+    global $RSS_Content;
+
+    $opened = false;
+    $page = "";
+    $site = (intval($site) == 0) ? 1 : 0;
+
+    RSS_Retrieve($url);
+    if($size > 0)
+        $recents = array_slice($RSS_Content, $site, $size + 1 - $site);
+
+    foreach($recents as $article)
+    {
+        $type = $article["type"];
+        if($type == 0)
+        {
+            if($opened == true)
+            {
+                $page .="\n";
+                $opened = false;
+            }
+            $page .="<div class='header-group'>";
+        }
+        else
+        {
+            if($opened == false)
+            {
+                $page .= "\n";
+                $opened = true;
+            }
+        }
+        $title = $article["title"];
+        $link = $article["link"];
+
+        $page .= "<div class='clearfix item row'><a href=\"$link\"  target='_blank'><div class='col-xs-2 list-left'><div class='clip'><img src='' class='rss_img'></div></div><div class='col-xs-10 list-body'><h4>$title</h4>";
+
+        $description = $article["description"];
+        if($description != false)
+        {
+            $page .= "<p class='rssdesc'>$description</p>";
+        }
+        if($withdate)
+        {
+            $date = $article["date"];
+            $date = new DateTime($date);
+            $page .="<div class='meta'><span class=''></span><span class='time'>".$date->format('Y-m-d H:i')."</span></div>";
+        }
+        $page .= "</div></a></div>\n";
+
+        if($type==0)
+        {
+            $page .="</div>";
+        }
+
+    }
+
+    if($opened == true)
+    {
+        $page .="\n";
+    }
+    return $page."\n";
+
+}
+
+
+function RSS_Gally_Display($url, $size = 15, $site = 0, $withdate = 0)
+{
+    global $RSS_Content;
+
+    $opened = false;
+    $page = "";
+    $site = (intval($site) == 0) ? 1 : 0;
+
+    RSS_Retrieve($url);
+    if($size > 0)
+        $recents = array_slice($RSS_Content, $site, $size + 1 - $site);
+
+    foreach($recents as $article)
+    {
+        $type = $article["type"];
+        if($type == 0)
+        {
+            if($opened == true)
+            {
+                $page .="\n";
+                $opened = false;
+            }
+            $page .="<div class='header-group clearfix'>";
+        }
+        else
+        {
+            if($opened == false)
+            {
+                $page .= "\n";
+                $opened = true;
+            }
+        }
+        $title = $article["title"];
+        $link = $article["link"];
+
+        if(strlen($title)>50){
+            $title = substr($title, 0, 50);
+        }
+        $page .= "<div class='col-xs-3 item row'><a href=\"$link\" target='_blank'><div class='clip'><img src='' class='rss_img'></div><h4>$title</h4>";
+
+        if($withdate)
+        {
+            $date = $article["date"];
+            $date = new DateTime($date);
+            $page .="<div class='meta'><span class=''></span><span class='time'>".$date->format("Y-m-d h:i")."</span></div>";
+        }
+        $page .= "</a></div>\n";
+
+        if($type==0)
+        {
+            $page .="</div>";
+        }
+
+    }
+
+    if($opened == true)
+    {
+        $page .="\n";
+    }
+    return $page."\n";
+
+}
+
+
+function RSS_link_list($url, $size = 15, $site = 0)
+{
+    global $RSS_Content;
+    $page = "";
+    $site = (intval($site) == 0) ? 1 : 0;
+    $return_link_list = array();
+    RSS_Retrieve($url);
+    if($size > 0)
+        $recents = array_slice($RSS_Content, $site, $size + 1 - $site);
+
+    foreach($recents as $key=>$article)
+    {
+        $link = $article["link"];
+        if($link != "" && $key != 0){
+            $return_link_list[] = $link;
+        }
+    }
+    return $return_link_list;
+
+}
+
+
+function GET_RSS_link($url, $size = 15, $site = 0)
+{
+    global $RSS_Content;
+    $page = "";
+    $site = (intval($site) == 0) ? 1 : 0;
+    $return_link_list = array();
+    RSS_Retrieve($url);
+    if($size > 0)
+        $recents = array_slice($RSS_Content, $site, $size + 1 - $site);
+
+    foreach($recents as $key=>$article)
+    {
+        $link = $article["link"];
+        if($link != ""){
+            $return_link_list[] = $link;
+        }
+    }
+    return $return_link_list;
+
+}
+
 
 
 ?>

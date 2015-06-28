@@ -20,6 +20,53 @@ class ControllerBase extends Controller
     public $db;
 
     public function initialize() {
+//
+//        if($ip = $this->request->getClientAddress()) {
+//            if(!($ip=='122.37.192.178' or $ip=='175.195.132.202')) {
+//                echo "서비스 점검중입니다.";
+//                exit();
+//            }
+//        }
+
+        $this->db = $this->getDI()->get("db");
+
+//        $this->assets->addCss("css/layout.css");
+//        $this->assets->addJs("js/layout.js");
+
+        // 세션 관련
+        $user_id = $this->session->get("user_id");
+        $this->logged_user = null;
+
+        if(!$user_id)
+        {
+
+            $client_ip = $this->request->getClientAddress();
+            $user_agent = $this->request->getUserAgent();
+            $key = $this->cookies->get('key');
+
+//            $auto_login = AutoLogin::findFirst("client_ip='{$client_ip}' and user_agent='{$user_agent}' and key='{$key}'");
+
+//            if($auto_login) {
+//                $user_id = $auto_login->user_id;
+//                $this->session->set("user_id", $user_id);
+//            }
+        }
+
+
+        if($user_id) {
+            $this->logged_user = User::findFirst($user_id);
+
+
+            if($this->logged_user) {
+
+
+
+            }
+
+        }
+
+
+        $this->view->setVar("logged_user", $this->logged_user);
 
         return true;
     }
@@ -51,6 +98,7 @@ class ControllerBase extends Controller
         $this->response->setJsonContent($content);
         $this->response->send();
         $this->view->disable();
+
         return true;
     }
 
@@ -70,7 +118,6 @@ class ControllerBase extends Controller
     }
 
 }
-
 
 function cp(){
 

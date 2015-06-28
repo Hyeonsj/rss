@@ -56,6 +56,32 @@ $di->set('crypt', function() {
     return $crypt;
 });
 
+
+$di->set('cache', function () {
+    $frontCache = new \Phalcon\Cache\Frontend\Data(array(
+        "lifetime" => 172800
+    ));
+    $prefix = 'pp.';
+    if(Context::isDevelopmentMode()) {
+        $prefix = 'dd.';
+    }
+    $cache = new \Phalcon\Cache\Backend\Libmemcached($frontCache, array(
+        "servers" => array(
+            array('host' => '127.0.0.1',
+                'port' => 11211,
+                'weight' => 1),
+        ),
+        "client" => array(
+            Memcached::OPT_HASH => Memcached::HASH_MD5,
+            Memcached::OPT_PREFIX_KEY => 'cache.',
+        ),
+        'lifetime' => 172800,
+        'prefix' => $prefix
+    ));
+    return $cache;
+});
+
+
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
